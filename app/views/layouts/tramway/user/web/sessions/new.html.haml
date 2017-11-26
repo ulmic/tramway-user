@@ -1,6 +1,0 @@
-.row
-  .col-md-6
-    = simple_form_for @session_form.model, url: '/session', method: :post, html: { class: 'form-horizontal' } do |f|
-      = f.input :email, as: :string
-      = f.input :password
-      = f.button :submit, t('helpers.links.enter'), class: 'btn btn-success'
