@@ -1,6 +1,6 @@
 module Tramway::User
   module Web
-    class SessionsController < ::Tramway::Core::Web::ApplicationController
+    class SessionsController < ::Tramway::User::Web::ApplicationController
       before_action :redirect_if_signed_in, except: :destroy
 
       def new
