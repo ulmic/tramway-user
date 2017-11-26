@@ -1,7 +1,7 @@
-require 'tramway/core/generators/install_generator'
+require 'rails/generators'
 
 module Tramway::User::Generators
-  class InstallGenerator < ::Tramway::Core::Generators::InstallGenerator
+  class InstallGenerator < ::Rails::Generators::Base
     include Rails::Generators::Migration
     source_root File.expand_path('../templates', __FILE__)
 
@@ -11,19 +11,8 @@ module Tramway::User::Generators
       generate 'tramway:core:install'
     end
 
-    def self.next_migration_number(path)
-      next_migration_number = current_migration_number(path) + 1
-      ActiveRecord::Migration.next_migration_number next_migration_number
-    end
-
     def copy_migrations
       migration_template 'create_users.rb', 'db/migrate/create_users.rb'
-      inject_into_file 'bin/rails', "include Tramway::User\n", before: :begin
-    end
-
-    def copy_initializer
-      super
-      copy_file "tramway_user.rb", 'config/initializers/tramway_user.rb'
     end
   end
 end
