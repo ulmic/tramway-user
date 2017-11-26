@@ -8,7 +8,6 @@ module Tramway::User
       end
 
       def create
-        binding.pry
         @session_form = ::Tramway::User::SessionForm.new User.find_or_initialize_by email: params[:user][:email]
         if @session_form.validate params[:user]
           sign_in @session_form.model
