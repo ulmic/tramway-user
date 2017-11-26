@@ -8,8 +8,9 @@ module Tramway::User
       end
 
       def create
-        @session_form = SessionForm.new User.find_or_initialize_by email: params[:tramway_user_user][:email]
-        if @session_form.validate params[:tramway_user_user]
+        binding.pry
+        @session_form = ::Tramway::User::SessionForm.new User.find_or_initialize_by email: params[:user][:email]
+        if @session_form.validate params[:user]
           sign_in @session_form.model
           redirect_to ::Tramway::User.root_path
         else
