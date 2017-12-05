@@ -9,7 +9,11 @@ module Tramway
       end
 
       def layout_path=(path)
-        ApplicationController.layout path
+        @layout_path = path
+      end
+
+      def layout_path
+        @layout_path ||= 'tramway/user/application'
       end
 
       def root_path=(path)

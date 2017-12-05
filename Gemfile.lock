@@ -1,4 +1,10 @@
 PATH
+  remote: ../tramway-core
+  specs:
+    tramway-core (0.1.0.4)
+      rails (~> 5.1.4)
+
+PATH
   remote: .
   specs:
     tramway-user (0.1.0)
@@ -178,8 +184,6 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
-    tramway-core (0.1.0.4)
-      rails (~> 5.1.4)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
     uber (0.1.0)
@@ -200,6 +204,7 @@ DEPENDENCIES
   reform-rails
   sass-rails
   simple_form
+  tramway-core!
   tramway-user!
 
 BUNDLED WITH
