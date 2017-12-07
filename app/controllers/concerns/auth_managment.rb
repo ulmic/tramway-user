@@ -19,7 +19,7 @@ module AuthManagment
     if signed_in?
       redirect_to '/' unless current_user.admin?
     else
-      redirect_to '/session/new'
+      redirect_to '/users/session/new'
     end
   end
 
