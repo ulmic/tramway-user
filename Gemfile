@@ -7,6 +7,7 @@ gem 'haml-rails'
 gem 'sass-rails'
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'tramway-core', path: '../tramway-core'
+gem 'enumerize'
 
 group :development, :test do
   gem 'pry'
