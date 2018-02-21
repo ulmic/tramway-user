@@ -4,12 +4,12 @@ module Tramway::User
       before_action :redirect_if_signed_in, except: :destroy
 
       def new
-        @session_form = ::Tramway::User::Web::SessionForm.new User.new
+        @session_form = ::Tramway::User::SessionForm.new ::Tramway::User::User.new
       end
 
       def create
-        @session_form = SessionForm.new User.find_or_initialize_by email: params[:tramway_user_user][:email]
-        if @session_form.validate params[:tramway_user_user]
+        @session_form = ::Tramway::User::SessionForm.new User.find_or_initialize_by email: params[:user][:email]
+        if @session_form.validate params[:user]
           sign_in @session_form.model
           redirect_to ::Tramway::User.root_path
         else

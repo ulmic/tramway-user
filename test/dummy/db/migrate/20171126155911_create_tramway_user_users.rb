@@ -1,6 +1,8 @@
-class CreateUsers < ActiveRecord::Migration[5.1]
+# FIXME specify rails version
+# default is 5.1
+class CreateTramwayUserUsers < ActiveRecord::Migration[5.1]
   def change
-    create_table :users do |t|
+    create_table :tramway_user_users do |t|
       t.text :email
       t.text :password_digest
       t.text :first_name
@@ -14,5 +16,3 @@ class CreateUsers < ActiveRecord::Migration[5.1]
     end
   end
 end
-# FIXME specify rails version
-# default is 5.1

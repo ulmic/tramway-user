@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171126125024) do
+ActiveRecord::Schema.define(version: 20171126155911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "tramway_user_users", force: :cascade do |t|
+    t.text "email"
+    t.text "password_digest"
+    t.text "first_name"
+    t.text "last_name"
+    t.text "patronymic"
+    t.text "avatar"
+    t.text "state"
+    t.text "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.text "email"
